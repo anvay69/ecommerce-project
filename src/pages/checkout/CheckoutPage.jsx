@@ -1,5 +1,5 @@
 // import { Link } from 'react-router';
-import CheckoutHeader from '../components/CheckoutHeader';
+import CheckoutHeader from './CheckoutHeader';
 import './CheckoutPage.css';
 
 export default function CheckoutPage() {
