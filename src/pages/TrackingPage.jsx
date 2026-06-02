@@ -5,6 +5,7 @@ export default function TrackingPage() {
   return (
     <>
       <title>Track Your Order</title>
+      <link rel="icon" type="image/svg+xml" href="tracking-favicon.png" />
 
       <Header />
 
