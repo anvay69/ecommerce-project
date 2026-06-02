@@ -8,7 +8,14 @@ import LogoWhiteImage from "../assets/images/logo-white.png";
 import MobileLogoWhiteImage from "../assets/images/mobile-logo-white.png";
 
 
-export default function Header() {
+export default function Header({ cart }) {
+  let totalQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    totalQuantity += cartItem.quantity;
+  });
+
+
   return (
     <div className="header">
       <div className="left-section">
@@ -36,7 +43,7 @@ export default function Header() {
 
         <NavLink className="cart-link header-link" to="/checkout">
           <img className="cart-icon" src={CartIcon} />
-          <div className="cart-quantity">3</div>
+          <div className="cart-quantity">{totalQuantity}</div>
           <div className="cart-text">Cart</div>
         </NavLink>
       </div>
