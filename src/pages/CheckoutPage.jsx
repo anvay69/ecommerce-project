@@ -1,3 +1,4 @@
+// import { Link } from 'react-router';
 import './CheckoutPage.css';
 import './checkout-header.css';
 
@@ -153,7 +154,8 @@ export default function CheckoutPage() {
                   </div>
                 </div>
                 <div className="delivery-option">
-                  <input type="radio" checked className="delivery-option-input"
+                  <input type="radio" c
+                  hecked className="delivery-option-input"
                     name="delivery-option-2" />
                   <div>
                     <div className="delivery-option-date">
