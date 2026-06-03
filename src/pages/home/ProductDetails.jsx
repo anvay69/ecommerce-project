@@ -1,8 +1,25 @@
+import { useState } from 'react';
 import CheckmarkIcon from '../../assets/images/icons/checkmark.png';
 import { formatMoney } from "../../utils/money";
+import axios from 'axios';
 
 
-export default function ProductDetails({ product }) {
+export default function ProductDetails({ product, loadCartItems }) {
+  const [quantity, setQuantity] = useState(1);
+
+  const addToCart = async () => {
+    await axios.post('/api/cart-items', {
+      productId: product.id,
+      quantity
+    });
+    await loadCartItems();
+  };
+
+  const selectQuantity = (event) => {
+    const quantitySelected = Number(event.target.value);
+    setQuantity(quantitySelected);
+  };
+
   return (
     <div className="product-container">
       <div className="product-image-container">
@@ -27,7 +44,7 @@ export default function ProductDetails({ product }) {
       </div>
 
       <div className="product-quantity-container">
-        <select>
+        <select value={quantity} onChange={selectQuantity}>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -48,7 +65,9 @@ export default function ProductDetails({ product }) {
         Added
       </div>
 
-      <button className="add-to-cart-button button-primary">
+      <button
+        className="add-to-cart-button button-primary"
+        onClick={addToCart}>
         Add to Cart
       </button>
     </div>

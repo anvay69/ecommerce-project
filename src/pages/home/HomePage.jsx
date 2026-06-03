@@ -4,11 +4,8 @@ import { useEffect, useState } from 'react';
 import './HomePage.css';
 import { ProductsGrid } from './ProductsGrid';
 
-// images
 
-
-
-export default function HomePage({ cart }) {
+export default function HomePage({ cart, loadCartItems }) {
 
   // to store products data
   const [products, setProducts] = useState([]);
@@ -34,7 +31,7 @@ export default function HomePage({ cart }) {
 
       <div className="home-page">
 
-        <ProductsGrid products={products} />
+        <ProductsGrid products={products} loadCartItems={loadCartItems}/>
 
       </div>
     </>
