@@ -1,12 +1,12 @@
 import { Link } from 'react-router';
-import Header from '../components/Header';
+import Header from '../../components/Header';
 import './NotFoundPage.css';
 
-export default function NotFoundPage() {
+export default function NotFoundPage({ cart }) {
   return (
     <>
       <title>Not Found</title>
-      <Header />
+      <Header cart={cart}/>
       <div className="main-container">
       <h1 className="status-code">404</h1>
       <p className="text">
