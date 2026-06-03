@@ -6,6 +6,7 @@ import axios from 'axios';
 
 export default function ProductDetails({ product, loadCartItems }) {
   const [quantity, setQuantity] = useState(1);
+  const [addedToCart, setAddedToCart] = useState(false);
 
   const addToCart = async () => {
     await axios.post('/api/cart-items', {
@@ -13,6 +14,12 @@ export default function ProductDetails({ product, loadCartItems }) {
       quantity
     });
     await loadCartItems();
+
+    // updating the added to cart state
+    setAddedToCart(true);
+    setTimeout(() => {
+      setAddedToCart(false);
+    }, 2000);
   };
 
   const selectQuantity = (event) => {
@@ -60,7 +67,8 @@ export default function ProductDetails({ product, loadCartItems }) {
 
       <div className="product-spacer"></div>
 
-      <div className="added-to-cart">
+      <div className="added-to-cart" 
+      style={{opacity: addedToCart ? 1 : 0}}>
         <img src={CheckmarkIcon} />
         Added
       </div>
