@@ -12,20 +12,23 @@ export default function CheckoutPage({ cart, loadCartItems }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
-  // getting delivery options and payment summary
+  // getting delivery options 
   useEffect(() => {
     const getDeliveryOptions = async () => {
       const response = await axios.get('/api/delivery-options?expand=estimatedDeliveryTime');
       setDeliveryOptions(response.data);
     }
     getDeliveryOptions();
+  }, []);
 
+  // loading payment summary
+  useEffect(() => {
     const getPaymentSummary = async () => {
       const response = await axios.get('/api/payment-summary');
       setPaymentSummary(response.data);
     }
     getPaymentSummary();
-  }, [cart]);
+  }, [cart])
 
 
   // html of checkout page
