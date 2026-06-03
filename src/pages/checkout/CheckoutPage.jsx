@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import OrderSummary from './OrderSummary';
 import PaymentSummary from './PaymentSummary';
 
-export default function CheckoutPage({ cart }) {
+export default function CheckoutPage({ cart, loadCartItems }) {
 
   // we need these for checkout page only
   const [deliveryOptions, setDeliveryOptions] = useState([]);
@@ -25,7 +25,7 @@ export default function CheckoutPage({ cart }) {
       setPaymentSummary(response.data);
     }
     getPaymentSummary();
-  }, []);
+  }, [cart]);
 
 
   // html of checkout page
@@ -41,7 +41,7 @@ export default function CheckoutPage({ cart }) {
 
         <div className="checkout-grid">
           
-          <OrderSummary deliveryOptions={deliveryOptions} cart={cart}/>
+          <OrderSummary deliveryOptions={deliveryOptions} loadCartItems={loadCartItems} cart={cart}/>
 
           <PaymentSummary paymentSummary={paymentSummary} />
         </div>
