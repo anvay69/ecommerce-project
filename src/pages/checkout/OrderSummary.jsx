@@ -9,7 +9,6 @@ export default function OrderSummary({ deliveryOptions , cart , loadCartItems })
       {deliveryOptions.length > 0 && 
       cart.map((cartItem) => {
         
-        
         return (
           <div key={cartItem.productId} className="cart-item-container">
             
@@ -17,7 +16,7 @@ export default function OrderSummary({ deliveryOptions , cart , loadCartItems })
 
             <div className="cart-item-details-grid">
               
-              <CartItemDetails cartItem={cartItem}/>
+              <CartItemDetails cartItem={cartItem} loadCartItems={loadCartItems}/>
 
               <DeliveryOptions 
                 deliveryOptions={deliveryOptions} 
@@ -27,7 +26,9 @@ export default function OrderSummary({ deliveryOptions , cart , loadCartItems })
             </div>
           </div>
         );
+
       })}
+
     </div>
   )
 }

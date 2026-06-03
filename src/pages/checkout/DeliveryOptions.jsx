@@ -18,7 +18,7 @@ export default function DeliveryOptions({ deliveryOptions , cartItem, loadCartIt
         }
 
         const updateDeliveryOption = async () => {
-          await axios.put(`http://localhost:3000/api/cart-items/${cartItem.productId}`, {
+          await axios.put(`/api/cart-items/${cartItem.productId}`, {
             deliveryOptionId: deliveryOption.id
           });
           await loadCartItems();
