@@ -43,7 +43,7 @@ export default function CheckoutPage({ cart, loadCartItems }) {
           
           <OrderSummary deliveryOptions={deliveryOptions} loadCartItems={loadCartItems} cart={cart}/>
 
-          <PaymentSummary paymentSummary={paymentSummary} />
+          <PaymentSummary paymentSummary={paymentSummary} loadCartItems={loadCartItems} />
         </div>
       </div>
     </>
