@@ -4,6 +4,7 @@ import axios from "axios";
 
 export default function PaymentSummary({ paymentSummary, loadCartItems }) {
   const navigate = useNavigate();
+  
   const createOrder = async () => {
     await axios.post(`/api/orders`);
     await loadCartItems();
