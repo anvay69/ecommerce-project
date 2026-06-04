@@ -51,7 +51,7 @@ export default function ProductDetails({ product, loadCartItems }) {
       </div>
 
       <div className="product-quantity-container">
-        <select value={quantity} onChange={selectQuantity}>
+        <select value={quantity} onChange={selectQuantity} data-testid="quantity-selector">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -67,14 +67,14 @@ export default function ProductDetails({ product, loadCartItems }) {
 
       <div className="product-spacer"></div>
 
-      <div className="added-to-cart" 
-      style={{opacity: addedToCart ? 1 : 0}}>
+      <div className="added-to-cart"
+        style={{ opacity: addedToCart ? 1 : 0 }}>
         <img src={CheckmarkIcon} />
         Added
       </div>
 
       <button
-      data-testid="add-to-cart-button"
+        data-testid="add-to-cart-button"
         className="add-to-cart-button button-primary"
         onClick={addToCart}>
         Add to Cart
