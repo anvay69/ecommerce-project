@@ -74,6 +74,7 @@ export default function ProductDetails({ product, loadCartItems }) {
       </div>
 
       <button
+      data-testid="add-to-cart-button"
         className="add-to-cart-button button-primary"
         onClick={addToCart}>
         Add to Cart
