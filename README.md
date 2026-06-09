@@ -25,7 +25,27 @@ Then open the browser at `http://localhost:5173`.
 
 ## Backend
 
-Backend must be running on `http://localhost:3000`.
+The backend repository is available at [github.com/anvay69/ecommerce-backend](https://github.com/anvay69/ecommerce-backend).
+
+### Running the backend
+
+1. Clone the repository:
+```bash
+git clone https://github.com/anvay69/ecommerce-backend.git
+cd ecommerce-backend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the backend server:
+```bash
+npm start
+```
+
+The backend will run on `http://localhost:3000`.
 
 Vite proxies `/api` and `/images` to that host.
 
