@@ -23,6 +23,12 @@ npm run dev
 
 Then open the browser at `http://localhost:5173`.
 
+## Backend
+
+Backend must be running on `http://localhost:3000`.
+
+Vite proxies `/api` and `/images` to that host.
+
 ## Test
 
 ```bash
@@ -70,36 +76,3 @@ This frontend loads all data from a Node backend and renders it with React. It u
 - `/orders` — past orders and order details
 - `/tracking/:orderId/:productId` — delivery progress for a single ordered item
 
-## Backend
-
-Backend must be running on `http://localhost:3000`.
-
-Vite proxies `/api` and `/images` to that host.
-
-## Setup
-
-```bash
-npm install
-npm run dev
-```
-
-Then open the browser at `http://localhost:5173`.
-
-## Test
-
-```bash
-npx vitest
-```
-
-## Screenshots
-
-<table>
-  <tr>
-    <td><img src="screenshots/home.png" alt="Home" width="100%"/></td>
-    <td><img src="screenshots/cart.png" alt="Cart" width="100%"/></td>
-  </tr>
-  <tr>
-    <td><img src="screenshots/orders.png" alt="Orders" width="100%"/></td>
-    <td><img src="screenshots/tracking.png" alt="Tracking" width="100%"/></td>
-  </tr>
-</table>
