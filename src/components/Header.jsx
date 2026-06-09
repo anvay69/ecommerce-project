@@ -1,4 +1,4 @@
-import { NavLink, useNavigate , useSearchParams} from 'react-router';
+import { NavLink, useNavigate, useSearchParams } from 'react-router';
 import './Header.css';
 
 // images
@@ -46,10 +46,10 @@ export default function Header({ cart }) {
       </div>
 
       <div className="middle-section">
-        <input 
-          className="search-bar" 
-          type="text" 
-          placeholder="Search" 
+        <input
+          className="search-bar"
+          type="text"
+          placeholder="Search"
           onChange={updateQuery}
           value={query}
         />
